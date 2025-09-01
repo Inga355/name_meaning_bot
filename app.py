@@ -5,6 +5,7 @@
 
 import os
 import sys
+import re
 
 
 #------------------------------------------------------------------------------
@@ -72,6 +73,10 @@ def fetch_name_info(name: str) -> str:
     name = name.strip()
     if not name:
         return "Please provide a non-empty first name."
+
+    # Basic validation
+    if not re.match(r"^[A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ\s\-']+$", name):
+        return "Please enter a valid first name (letters, spaces, apostrophes or hyphens)."
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
