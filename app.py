@@ -4,8 +4,9 @@
 #------------------------------------------------------------------------------
 
 import os
-import sys
 import re
+import sys
+import time
 
 
 #------------------------------------------------------------------------------
@@ -58,6 +59,22 @@ USER_TEMPLATE = (
     "Variants: ..."
 )
 
+
+#--------------------------------------------------------------------------------------
+# Utility: simple retry on transient errors (e.g., rate limits)
+#--------------------------------------------------------------------------------------
+
+def _with_retry(fn, *args, **kwargs):
+    delays = [0.5, 1.0, 2.0]
+    last_err = None
+    for d in [0.0] + delays:
+        if d:
+            time.sleep(d)
+        try:
+            return fn(*args, **kwargs)
+        except Exception as e:
+            last_err = e
+    raise last_err
 
 #------------------------------------------------------------------------------
 # Core Call
