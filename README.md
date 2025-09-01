@@ -87,5 +87,5 @@ requirements.txt      # Dependencies
 
 ## 📜 License
 
-MIT License. Use freely for learning and experimentation.
+Use freely for learning and experimentation.
 
