@@ -1,3 +1,4 @@
+
 # 🧾 Name Meaning Bot
 
 A simple Python CLI chatbot that asks for a first name and returns a concise meaning, likely origin, and common variants.  
@@ -23,29 +24,36 @@ Powered by the OpenAI API.
 Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
 
 ---
 
 ## 🔑 Setup
 
-1. Create a .env file in the project folder:
-    OPENAI_API_KEY=sk-yourapikey
-
+1. Create a `.env` file in the project folder:
+   ```bash
+   OPENAI_API_KEY=sk-yourapikey
+   ```
 2. (Optional) Use a virtual environment:
-    python -m venv venv
-    source venv/bin/activate  # Linux/Mac
-    venv\Scripts\activate     # Windows
-
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate   # Windows
+   ```
 
 ---
 
 ## ▶️ Run the Bot
 
-- Type a first name → get meaning and origin
-- Type exit to quit
+```bash
+python name_meaning_bot.py
+```
 
-### Example:
+- Type a first name → get meaning and origin  
+- Type `exit` to quit  
 
+**Example:**
+```
 👋 Hi! Tell me your first name and I'll share its meaning & likely origin.
 Type 'exit' to quit.
 
@@ -54,26 +62,29 @@ First name: Alexander
 Meaning: Defender of men.
 Origin: Greek (Alexandros).
 Variants: Alex, Aleksandr, Alejandro
+```
 
 ---
 
 ## 🛠️ Project Structure
 
-app.py                # Main script
+```
+name_meaning_bot.py   # Main script
 requirements.txt      # Dependencies
 .env                  # API key (not committed)
+```
 
 ---
 
 ## 💡 Ideas to Extend
 
-- Web API with Flask (/name?first=...)
-- Multi-language responses
-- Caching for popular names
-- Structured JSON output for apps
+- Web API with Flask (`/name?first=...`)  
+- Multi-language responses  
+- Caching for popular names  
+- Structured JSON output for apps  
 
 ---
 
 ## 📜 License
 
-Use freely for learning and experimentation.
+MIT License. Use freely for learning and experimentation.
